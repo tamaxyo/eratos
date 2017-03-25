@@ -13,3 +13,19 @@ class Eratosthenes
     return primes + candidates
   end
 end
+
+if __FILE__ == $0
+  if ARGV.size != 1
+    puts "引数は1つにしましょうね"
+    exit 64
+  end
+
+  upper = ARGV[0].to_i
+
+  if upper < 2
+    puts "2以上の正数を指定してください"
+    exit 65
+  end
+
+  puts Eratosthenes.primes(upper).join(", ")
+end
